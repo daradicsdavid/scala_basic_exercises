@@ -2,28 +2,29 @@ package lists.P01
 
 import java.util.NoSuchElementException
 
+import lists.P01.FindTheLastElementOfAList.{findTheLastElementOfAListWithBuiltIn, findTheLastElementOfAListWithPatternMatchingAndRecursion}
 import org.scalatest.FunSuite
 import utils.ListUtils
 
 class FindTheLastElementOfAListTest extends FunSuite {
 
   test("testFindTheLastElementOfAListWithBuiltIn") {
-    testListWithNumber(FindTheLastElementOfAList findTheLastElementOfAListWithBuiltIn)
-    testListWithString(FindTheLastElementOfAList findTheLastElementOfAListWithBuiltIn)
+    testListWithNumber(findTheLastElementOfAListWithBuiltIn)
+    testListWithString(findTheLastElementOfAListWithBuiltIn)
   }
 
   test("testFindTheLastElementOfAListWithBuiltIn with empy list") {
-    ListUtils testWithEmptyList(FindTheLastElementOfAList findTheLastElementOfAListWithBuiltIn, classOf[NoSuchElementException])
+    ListUtils testWithEmptyList(findTheLastElementOfAListWithBuiltIn, classOf[NoSuchElementException])
   }
 
   test("testFindTheLastElementOfAListWithPatternMatchingAndRecursion") {
-    testListWithNumber(FindTheLastElementOfAList findTheLastElementOfAListWithPatternMatchingAndRecursion)
-    testListWithString(FindTheLastElementOfAList findTheLastElementOfAListWithBuiltIn)
+    testListWithNumber(findTheLastElementOfAListWithPatternMatchingAndRecursion)
+    testListWithString(findTheLastElementOfAListWithBuiltIn)
   }
 
 
   test("testFindTheLastElementOfAListWithPatternMatchingAndRecursion with empy list") {
-    ListUtils testWithEmptyList(FindTheLastElementOfAList findTheLastElementOfAListWithPatternMatchingAndRecursion, classOf[NoSuchElementException])
+    ListUtils testWithEmptyList(findTheLastElementOfAListWithPatternMatchingAndRecursion, classOf[NoSuchElementException])
   }
 
   def testListWithNumber(functionToTest: List[Any] => Any): Unit = {
