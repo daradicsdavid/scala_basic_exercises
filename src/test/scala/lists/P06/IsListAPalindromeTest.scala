@@ -9,32 +9,38 @@ class IsListAPalindromeTest extends FunSuite {
 
 
   test("testIsPalindromeWithBuiltInWithoutView") {
-    testWithEmptyList(IsListAPalindrome.isPalindromeWithBuiltInWithoutView)
-    testWithNonEmptyList(IsListAPalindrome.isPalindromeWithBuiltInWithoutView)
+    testWithEmptyVector(IsListAPalindrome.isPalindromeWithBuiltInWithoutView)
+    testWithNonEmptyVector(IsListAPalindrome.isPalindromeWithBuiltInWithoutView)
   }
 
   test("testIsPalindromeWithBuiltInWithView") {
-    testWithEmptyList(IsListAPalindrome.isPalindromeWithBuiltInWithView)
-    testWithNonEmptyList(IsListAPalindrome.isPalindromeWithBuiltInWithView)
+    testWithEmptyVector(IsListAPalindrome.isPalindromeWithBuiltInWithView)
+    testWithNonEmptyVector(IsListAPalindrome.isPalindromeWithBuiltInWithView)
   }
 
   test("testIsPalindromeWithBuiltinExists") {
-    testWithEmptyList(IsListAPalindrome.isPalindromeWithBuiltinExists)
-    testWithNonEmptyList(IsListAPalindrome.isPalindromeWithBuiltinExists)
+    testWithEmptyVector(IsListAPalindrome.isPalindromeWithBuiltinExists)
+    testWithNonEmptyVector(IsListAPalindrome.isPalindromeWithBuiltinExists)
   }
 
   test("testIsPalindromeWithIteration") {
-    testWithEmptyList(IsListAPalindrome.isPalindromeWithIteration)
-    testWithNonEmptyList(IsListAPalindrome.isPalindromeWithIteration)
+    testWithEmptyVector(IsListAPalindrome.isPalindromeWithIteration)
+    testWithNonEmptyVector(IsListAPalindrome.isPalindromeWithIteration)
   }
 
-  def testWithEmptyList(functionToTest: Vector[Any] => Boolean): Unit = {
+  test("testIsPalindromeWithRecursive") {
+    testWithEmptyVector(IsListAPalindrome.isPalindromeWithRecursive)
+    testWithNonEmptyVector(IsListAPalindrome.isPalindromeWithRecursive)
+  }
+
+
+  def testWithEmptyVector(functionToTest: Vector[Any] => Boolean): Unit = {
     val result = functionToTest(Vector())
 
     assert(result)
   }
 
-  def testWithNonEmptyList(functionToTest: Vector[Any] => Boolean): Unit = {
+  def testWithNonEmptyVector(functionToTest: Vector[Any] => Boolean): Unit = {
 
     val palindromeList = Vector.range(1, 100) ++ Vector.range(1, 100).reverse
     val nonPalindromeList = Vector.range(1, 100) ++ Vector.range(1, 100).reverse.updated(0, 100)

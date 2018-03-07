@@ -1,5 +1,7 @@
 package lists.P06
 
+import scala.annotation.tailrec
+
 
 object IsListAPalindrome {
 
@@ -23,5 +25,13 @@ object IsListAPalindrome {
       if (vector(i) != vector(vector.length - 1 - i)) result = false
     }
     result
+  }
+
+  @tailrec
+  def isPalindromeWithRecursive[A](vector: Vector[A]): Boolean = {
+    vector match {
+      case head +: body => (body.isEmpty || head == body.last) && isPalindromeWithRecursive(body.init)
+      case _ => true
+    }
   }
 }
